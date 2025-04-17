@@ -319,6 +319,11 @@
         document.getElementById(targetId).style.display = 'block';
       });
     });
+  // Toggle Side Tab
+    document.getElementById('tab-toggle').addEventListener('click', () => {
+      const tab = document.getElementById('side-tab');
+      tab.classList.toggle('closed');
+    });
   </script>
 </body>
 </html>
