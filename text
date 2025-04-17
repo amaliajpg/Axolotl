@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Axolotl Blog</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8d7d3; /* Pastel pink background */
+      color: #333;
+    }
+
+    header {
+      background-color: #ff66b2; /* Pink title */
+      color: white;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .post {
+      background: white;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .post h2 {
+      margin-top: 0;
+      font-size: 2rem;
+      color: #ff66b2; /* Pink color for post titles */
+    }
+
+    .post img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+
+    .post p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #ff66b2;
+      color: white;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .footer-text {
+      margin: 0;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <h1>Welcome to the Axolotl Blog</h1>
+  </header>
+
+  <!-- Main Blog Content -->
+  <div class="container">
+    <!-- First Post -->
+    <div class="post">
+      <h2>All About Axolotls</h2>
+      <p><em>April 17, 2025</em></p>
+      <p>"Text here" – This is where you add the text about the first post! Write about axolotls, their habitat, their unique traits, etc.</p>
+      <img src="image-here.jpg" alt="Axolotl Image" />
+      <p>"Text here" – Continue with more details about the topic. Maybe discuss how they regenerate their limbs or how they are endangered.</p>
+    </div>
+
+    <!-- Second Post -->
+    <div class="post">
+      <h2>Axolotls as Pets</h2>
+      <p><em>April 16, 2025</em></p>
+      <p>"Text here" – Share information on keeping axolotls as pets, their care requirements, and their diet.</p>
+      <img src="image-here.jpg" alt="Axolotl Pet Image" />
+      <p>"Text here" – You can write about the specific water conditions they need, their social behavior, and how to create a suitable tank environment.</p>
+    </div>
+
+    <!-- Third Post -->
+    <div class="post">
+      <h2>Fun Facts About Axolotls</h2>
+      <p><em>April 15, 2025</em></p>
+      <p>"Text here" – Here, you can list and describe some fun and interesting facts about axolotls. For example, they can regenerate their heart and brain!</p>
+      <img src="image-here.jpg" alt="Fun Facts Axolotl" />
+      <p>"Text here" – Continue listing more facts like their ability to remain in a larval stage throughout their life and why that’s so special.</p>
+    </div>
+
+  </div>
+
+  <!-- Footer Section -->
+  <footer>
+    <p class="footer-text">&copy; 2025 Axolotl Blog. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
