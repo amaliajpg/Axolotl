@@ -31,6 +31,12 @@
       opacity: 0;
       transform: translateY(30px);
       animation: fadeInUp 1s forwards;
+      transition: all 0.3s ease;
+    }
+
+    .intro-bubble:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 8px 25px rgba(46, 125, 50, 0.3);
     }
 
     .intro-bubble h2 {
@@ -47,6 +53,7 @@
       border-radius: 50%;
       border: 4px solid #2e7d32;
       margin-bottom: 1rem;
+      animation: floatIn 2s ease-out forwards, pulse 6s ease-in-out infinite;
     }
 
     .description {
@@ -74,10 +81,16 @@
       transform: translateY(30px);
       animation: fadeInUp 1s forwards;
       animation-delay: 0.5s;
+      transition: all 0.3s ease;
     }
 
     .content-bubble:nth-of-type(3) {
       animation-delay: 1s;
+    }
+
+    .content-bubble:hover {
+      transform: translateY(-5px) scale(1.015);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     }
 
     .content-bubble h3 {
@@ -106,6 +119,26 @@
       to {
         opacity: 1;
         transform: translateY(0);
+      }
+    }
+
+    @keyframes floatIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.8) translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.03);
       }
     }
 
@@ -145,7 +178,7 @@
 <body>
 
   <!-- Profile Bubble -->
-  <div class="intro-section">
+  <div class="intro-section" id="top">
     <div class="intro-bubble">
       <img src="pfpp.jpg" alt="Profile Picture" class="profile-pic">
       <h2>Salut! Eu sunt Amalia! 💚</h2>
@@ -164,7 +197,7 @@
         Știai că axolotlul poate regenera nu doar membrele, ci și inima și creierul? Această abilitate rară îl face un subiect important în studiile medicale moderne.
       </p>
       <p>
-        Citește și despre <a href="#adfaber">experiența mea la Adfaber</a> sau vizitează <a href="https://amaliajpg.github.io/Axolotl" target="_blank">site-ul meu cu axolotl!</a> 🌱
+        Citește și despre <a href="#adfaber">experiența mea la Adfaber</a> sau vezi mai multe la <a href="https://amaliajpg.github.io/Axolotl" target="_blank">site-ul meu cu axoloti!</a> 🌱
       </p>
     </div>
 
@@ -172,10 +205,10 @@
     <div class="content-bubble" id="adfaber">
       <h3>📚 Articol #2: Experiența mea la Adfaber</h3>
       <p>
-        Participarea la competiția Adfaber a fost o experiență creativă și educativă. Am învățat cum să creez pagini web interesante și cum să le dau viață cu HTML și CSS.
+        Participarea la cursurile: Breaking Barriers a fost o experiență creativă și educativă. Am învățat cum să creez pagini web interesante și cum să le dau viață cu HTML.
       </p>
       <p>
-        Poți citi și primul meu articol despre <a href="#top">magia regenerării axolotlului</a> sau vizita <a href="https://amaliajpg.github.io/Axolotl" target="_blank">pagina principală</a>. ✨
+        Poți citi și primul meu articol despre <a href="#top">magia regenerării axolotlului</a> sau vizita <a href="https://amaliajpg.github.io/Axolotl" target="_blank">blog-ul meu principal</a>. ✨
       </p>
     </div>
   </div>
