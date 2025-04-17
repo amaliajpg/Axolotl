@@ -117,7 +117,82 @@
       font-weight: bold;
       display: none;
     }
-   
+
+   .side-tab {
+      position: fixed;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      background: #ff66b2;
+      border-radius: 30px 0 0 30px;
+      box-shadow: -2px 2px 8px rgba(0,0,0,0.2);
+      z-index: 1000;
+      transition: right 0.3s;
+    }
+
+    .tab-toggle {
+      background: #fff;
+      border: none;
+      padding: 0.5rem;
+      border-radius: 50%;
+      margin: 0.5rem;
+      cursor: pointer;
+    }
+
+    .tab-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 0.5rem;
+    }
+
+    .tab-btn {
+      background: white;
+      border: none;
+      border-radius: 50px;
+      padding: 0.6rem 1rem;
+      text-align: left;
+      cursor: pointer;
+      font-family: 'Quicksand', sans-serif;
+      transition: background 0.2s;
+    }
+
+    .tab-btn:hover {
+      background: #ffd1e3;
+    }
+
+    .tab-page {
+      display: none;
+      position: fixed;
+      right: 70px;
+      top: 20%;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      width: 280px;
+      max-width: 90%;
+      z-index: 999;
+    }
+
+    #contact-form input,
+    #contact-form textarea {
+      width: 100%;
+      margin-bottom: 0.8rem;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    #contact-form button {
+      background-color: #ff66b2;
+      color: white;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -170,7 +245,36 @@
   </form>
 </div>
 
+div class="side-tab">
+    <button class="tab-toggle">&#x25C0;</button>
+    <div class="tab-links">
+      <button data-target="articles" class="tab-btn"><span>📰</span> Articole</button>
+      <button data-target="reviews" class="tab-btn"><span>⭐</span> Recenzii</button>
+      <button data-target="contact" class="tab-btn"><span>✉️</span> Contact</button>
+    </div>
+  </div>
 
+  <!-- Tab Pages -->
+  <div id="articles" class="tab-page">
+    <h3>Articole Extra</h3>
+    <p>Un alt articol interesant despre axolotli care n-a prins loc pe homepage.</p>
+  </div>
+
+  <div id="reviews" class="tab-page">
+    <h3>Recenzii</h3>
+    <p>Recenzii de la oameni care au axoloti: "Sunt atât de drăgălași!" - Maria</p>
+  </div>
+
+  <div id="contact" class="tab-page">
+    <h3>Contactează-mă</h3>
+    <form id="contact-form" action="https://formspree.io/f/xldjkvkd" method="POST">
+      <input type="text" name="name" placeholder="Numele tău" required>
+      <input type="email" name="email" placeholder="Emailul tău" required>
+      <textarea name="message" placeholder="Mesajul tău..." required rows="4"></textarea>
+      <button type="submit">Trimite</button>
+    </form>
+    <p id="contact-success" class="success-message">Mulțumesc pentru mesaj!</p>
+  </div>
   
   <!-- Footer Section -->
   <footer>
