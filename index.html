@@ -193,6 +193,24 @@
       border-radius: 6px;
       cursor: pointer;
     }
+
+   .star-rating {
+  font-size: 2rem;
+  color: #ccc;
+  cursor: pointer;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.star-rating .star.selected,
+.star-rating .star.hovered {
+  color: gold;
+}
+
+.tab-page h3 {
+  text-align: center;
+}
   </style>
 </head>
 <body>
@@ -275,6 +293,18 @@
     </form>
     <p id="contact-success" class="success-message">Mulțumesc pentru mesaj!</p>
   </div>
+
+ <div class="tab-page" id="reviews" style="display: none;">
+  <h3>Lasă o recenzie</h3>
+  <div class="star-rating">
+    <span class="star" data-value="1">☆</span>
+    <span class="star" data-value="2">☆</span>
+    <span class="star" data-value="3">☆</span>
+    <span class="star" data-value="4">☆</span>
+    <span class="star" data-value="5">☆</span>
+  </div>
+  <p id="review-message" style="margin-top: 10px;"></p>
+</div>
   
   <!-- Footer Section -->
   <footer>
@@ -332,6 +362,55 @@ window.addEventListener('click', function(e) {
         tabPages.forEach(page => page.style.display = 'none');
       }
     });
+
+const stars = document.querySelectorAll(".star");
+const message = document.getElementById("review-message");
+
+// Load from local storage if rating was saved
+let savedRating = localStorage.getItem("axolotlRating");
+if (savedRating) {
+  highlightStars(savedRating);
+  message.innerText = `Ai oferit ${savedRating} stele. Mulțumim!`;
+}
+
+stars.forEach(star => {
+  star.addEventListener("mouseover", () => {
+    highlightStars(star.dataset.value, true);
+  });
+
+  star.addEventListener("mouseout", () => {
+    if (savedRating) {
+      highlightStars(savedRating);
+    } else {
+      clearHighlights();
+    }
+  });
+
+  star.addEventListener("click", () => {
+    const rating = star.dataset.value;
+    savedRating = rating;
+    localStorage.setItem("axolotlRating", rating);
+    highlightStars(rating);
+    message.innerText = `Ai oferit ${rating} stele. Mulțumim!`;
+  });
+});
+
+function highlightStars(value, isHover = false) {
+  stars.forEach(star => {
+    star.classList.remove("selected", "hovered");
+    if (star.dataset.value <= value) {
+      star.classList.add(isHover ? "hovered" : "selected");
+    }
+  });
+}
+
+function clearHighlights() {
+  stars.forEach(star => {
+    star.classList.remove("hovered");
+    star.classList.remove("selected");
+  });
+}
+
   
   </script>
 </body>
