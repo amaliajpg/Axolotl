@@ -324,6 +324,48 @@
       const tab = document.getElementById('side-tab');
       tab.classList.toggle('closed');
     });
+
+
+  const tabToggle = document.querySelector('.tab-toggle');
+  const sideTab = document.querySelector('.side-tab');
+  const tabButtons = document.querySelectorAll('.tab-btn');
+  const tabPages = document.querySelectorAll('.tab-page');
+
+  // Toggle side tab open/close
+  let tabOpen = true;
+  tabToggle.addEventListener('click', () => {
+    tabOpen = !tabOpen;
+    sideTab.style.right = tabOpen ? '0' : '-150px';
+    tabPages.forEach(page => page.style.display = 'none'); // Close all tab pages on toggle
+  });
+
+  // Open specific tab page
+  tabButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const target = button.getAttribute('data-target');
+      
+      // Hide all pages first
+      tabPages.forEach(page => {
+        page.style.display = 'none';
+      });
+
+      // Show the selected one
+      const activePage = document.getElementById(target);
+      if (activePage) {
+        activePage.style.display = 'block';
+      }
+    });
+  });
+
+  // Optional: Click outside to close tab page
+  window.addEventListener('click', function(e) {
+    if (!e.target.closest('.tab-page') && !e.target.closest('.side-tab')) {
+      tabPages.forEach(page => page.style.display = 'none');
+    }
+  });
+/
+
+  
   </script>
 </body>
 </html>
