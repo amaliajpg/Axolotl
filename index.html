@@ -325,7 +325,7 @@
       tab.classList.toggle('closed');
     });
 
-
+// Elements
   const tabToggle = document.querySelector('.tab-toggle');
   const sideTab = document.querySelector('.side-tab');
   const tabButtons = document.querySelectorAll('.tab-btn');
@@ -336,20 +336,19 @@
   tabToggle.addEventListener('click', () => {
     tabOpen = !tabOpen;
     sideTab.style.right = tabOpen ? '0' : '-150px';
-    tabPages.forEach(page => page.style.display = 'none'); // Close all tab pages on toggle
+    tabPages.forEach(page => page.style.display = 'none'); // hide all tab pages on toggle
   });
 
-  // Open specific tab page
+  // Show selected tab page
   tabButtons.forEach(button => {
-    button.addEventListener('click', () => {
+    button.addEventListener('click', (e) => {
+      e.stopPropagation(); // stop from triggering window click
       const target = button.getAttribute('data-target');
-      
-      // Hide all pages first
-      tabPages.forEach(page => {
-        page.style.display = 'none';
-      });
 
-      // Show the selected one
+      // Hide all pages
+      tabPages.forEach(page => page.style.display = 'none');
+
+      // Show selected
       const activePage = document.getElementById(target);
       if (activePage) {
         activePage.style.display = 'block';
@@ -357,12 +356,38 @@
     });
   });
 
-  // Optional: Click outside to close tab page
+  // Click outside tab area to hide tab pages
   window.addEventListener('click', function(e) {
     if (!e.target.closest('.tab-page') && !e.target.closest('.side-tab')) {
       tabPages.forEach(page => page.style.display = 'none');
     }
   });
+
+  // Subscription form logic (leave as is)
+  document.getElementById("subscribe-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const data = new FormData(form);
+
+    fetch(form.action, {
+      method: "POST",
+      body: data,
+      headers: {
+        'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        document.getElementById("success").style.display = "block";
+        form.reset();
+      } else {
+        alert("Oops! Ceva n-a mers. Încearcă din nou.");
+      }
+    }).catch(error => {
+      alert("Eroare: " + error.message);
+    });
+  });
+
+
 
   
   </script>
