@@ -368,11 +368,17 @@
     const tabButtons = document.querySelectorAll('.tab-btn');
     const tabPages = document.querySelectorAll('.tab-page');
 
-    let tabOpen = true;
     tabToggle.addEventListener('click', () => {
-      tabOpen = !tabOpen;
-      sideTab.style.right = tabOpen ? '0' : '-150px';
-      tabPages.forEach(page => page.style.display = 'none');
+  sideTab.classList.toggle("closed");
+
+  // Change arrow direction
+  tabToggle.textContent = sideTab.classList.contains("closed") ? '🡒' : '🡐';
+
+  // Hide tab pages when closing
+  if (sideTab.classList.contains("closed")) {
+    tabPages.forEach(page => page.style.display = 'none');
+  }
+    }
     });
 
     tabButtons.forEach(button => {
