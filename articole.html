@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>Articole</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand&family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Quicksand', sans-serif;
+      background-color: #e0f5e0;
+    }
+
+    .intro-section {
+      background-image: url('download (9).jpeg');
+      background-size: cover;
+      background-position: center;
+      padding: 4rem 1rem;
+      text-align: center;
+    }
+
+    .intro-bubble {
+      background: rgba(200, 255, 200, 0.85);
+      display: inline-block;
+      padding: 3rem 2rem;
+      border-radius: 30px;
+      box-shadow: 0 4px 15px rgba(0, 100, 0, 0.2);
+      max-width: 90%;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s forwards;
+    }
+
+    .intro-bubble h2 {
+      font-family: 'Great Vibes', cursive;
+      color: #2e7d32;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #2e7d32;
+      margin-bottom: 1rem;
+    }
+
+    .description {
+      color: #3c6e3c;
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .content-section {
+      background-image: url('download (10).jpeg');
+      background-size: cover;
+      background-position: center;
+      padding: 4rem 1rem;
+    }
+
+    .content-bubble {
+      background-color: #fff;
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s forwards;
+      animation-delay: 0.5s;
+    }
+
+    .content-bubble:nth-of-type(3) {
+      animation-delay: 1s;
+    }
+
+    .content-bubble h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    .content-bubble p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    .content-bubble a {
+      color: #2e7d32;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .content-bubble a:hover {
+      text-decoration: underline;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .intro-bubble {
+        padding: 2rem 1rem;
+      }
+
+      .intro-bubble h2 {
+        font-size: 1.5rem;
+      }
+
+      .description {
+        font-size: 1rem;
+        padding: 0 1rem;
+      }
+
+      .profile-pic {
+        width: 120px;
+        height: 120px;
+      }
+
+      .content-bubble {
+        padding: 1.5rem 1rem;
+      }
+
+      .content-bubble h3 {
+        font-size: 1.4rem;
+      }
+
+      .content-bubble p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Profile Bubble -->
+  <div class="intro-section">
+    <div class="intro-bubble">
+      <img src="pfpp.jpg" alt="Profile Picture" class="profile-pic">
+      <h2>Salut! Eu sunt Amalia! 💚</h2>
+      <p class="description">
+        Sunt pasionată de axoloti, pisici, natură și desenat. Pe această pagină veți găsi articole despre lumea minunată a acestor creaturi fascinante. 🦎✨
+      </p>
+    </div>
+  </div>
+
+  <!-- Content Articles -->
+  <div class="content-section">
+    <!-- Articol 1 -->
+    <div class="content-bubble">
+      <h3>📖 Articol #1: Magia regenerării</h3>
+      <p>
+        Știai că axolotlul poate regenera nu doar membrele, ci și inima și creierul? Această abilitate rară îl face un subiect important în studiile medicale moderne.
+      </p>
+      <p>
+        Citește și despre <a href="#adfaber">experiența mea la Adfaber</a> sau vizitează <a href="https://amaliajpg.github.io/Axolotl" target="_blank">site-ul meu cu axolotl!</a> 🌱
+      </p>
+    </div>
+
+    <!-- Articol 2 -->
+    <div class="content-bubble" id="adfaber">
+      <h3>📚 Articol #2: Experiența mea la Adfaber</h3>
+      <p>
+        Participarea la competiția Adfaber a fost o experiență creativă și educativă. Am învățat cum să creez pagini web interesante și cum să le dau viață cu HTML și CSS.
+      </p>
+      <p>
+        Poți citi și primul meu articol despre <a href="#top">magia regenerării axolotlului</a> sau vizita <a href="https://amaliajpg.github.io/Axolotl" target="_blank">pagina principală</a>. ✨
+      </p>
+    </div>
+  </div>
+
+</body>
+</html>
